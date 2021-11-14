@@ -119,6 +119,7 @@
         android:layout_margin="8sp"
         android:entries="@array/option_of_tea"
         android:minHeight="48dp"
+        android:textColor="@color/white"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -131,6 +132,7 @@
         android:layout_margin="8sp"
         android:entries="@array/option_of_coffee"
         android:visibility="invisible"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvChooseDrink" />
