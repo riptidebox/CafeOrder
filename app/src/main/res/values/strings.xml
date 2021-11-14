@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">CafeOrder</string>
+    <string name="logo_cafe">Logo cafe</string>
+    <string name="invitation">Welcome!</string>
+    <string name="input_user"></string>
+    <string name="input_password">Input password</string>
+    <string name="button_order">Create order</string>
+    <string name="user_name">User name</string>
+    <string name="toast_messege_warning">All fields must be filled</string>
+    <string name="what_add_to_your_tea">What add to your tea?</string>
+    <string name="hello_client_you_choose">Hello Client. You choose…</string>
+    <string name="tea">Tea</string>
+    <string name="coffee">Coffee</string>
+    <string name="milk">Milk</string>
+    <string name="sugar">Sugar</string>
+    <string name="lemon">Lemon</string>
+    <string name="select_type_of_drink">Select type of drink</string>
+    <string name="send_order_description">Send Order</string>
+
+    <string-array name="option_of_coffee">
+        <item>Americano</item>
+        <item>Espresso</item>
+        <item>Latte</item>
+    </string-array>
+    <string-array name="option_of_tea">
+        <item>Black</item>
+        <item>Green</item>
+        <item>Red</item>
+    </string-array>
+</resources>
