@@ -33,17 +33,22 @@
 
 
         <RadioButton
+            android:id="@+id/rbTea"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:checked="true"
+            android:onClick="onClickChangeDrink"
             android:text="@string/tea"
-            android:textColor="@color/white"
+            android:textColor="#795548"
             android:textSize="16sp" />
 
         <RadioButton
+            android:id="@+id/rb.Coffee"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="onClickChangeDrink"
             android:text="@string/coffee"
-            android:textColor="@color/white"
+            android:textColor="#795548"
             android:textSize="16sp" />
 
     </RadioGroup>
@@ -54,7 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8sp"
         android:gravity="center"
-        android:text="@string/what_add_to_your_tea"
+        android:text="@string/what_add_to_your_drink"
         android:textColor="@color/dark_brown"
         android:textSize="26sp"
         android:textStyle="bold"
@@ -68,7 +73,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8sp"
         android:text="@string/milk"
-        android:textColor="@color/white"
+        android:textColor="#795548"
         android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@+id/checkboxSugar"
         app:layout_constraintStart_toStartOf="parent"
@@ -80,7 +85,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8sp"
         android:text="@string/sugar"
-        android:textColor="@color/white"
+        android:textColor="#795548"
         android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@+id/checkboxLemon"
         app:layout_constraintStart_toEndOf="@id/checkboxMilk"
@@ -92,7 +97,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8sp"
         android:text="@string/lemon"
-        android:textColor="@color/white"
+        android:textColor="#795548"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/checkboxSugar"
@@ -131,8 +136,9 @@
         android:layout_height="wrap_content"
         android:layout_margin="8sp"
         android:entries="@array/option_of_coffee"
-        android:visibility="invisible"
+        android:minHeight="48dp"
         android:textColor="@color/white"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvChooseDrink" />
@@ -143,6 +149,7 @@
         android:layout_height="0px"
         android:layout_margin="8sp"
         android:contentDescription="@string/send_order_description"
+        android:onClick="onClickSendOrder"
         android:src="@drawable/button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
