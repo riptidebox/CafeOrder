@@ -2,54 +2,61 @@ package com.chigov.cafe_order;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.CheckBox;
-import android.widget.RadioButton;
-import android.widget.Spinner;
-import android.widget.TextView;
+import android.content.Intent; //Намерение (Intent) - это механизм для описания одной операции -
+// выбрать фотографию, отправить письмо, сделать звонок, запустить браузер и перейти по указанному адресу.
+import android.os.Bundle; //Bundle – это класс, реализующий ассоциативный массив, т.е. хранящий пары ключ-значение.
+import android.view.View; // строительные блоками Android UI
+import android.widget.CheckBox; // виджет чекбокс
+import android.widget.RadioButton; //виджет радио баттон
+import android.widget.Spinner; //виджет спинера аналог выпадающего списка комбо-бокс
+import android.widget.TextView; //подключение компонентов к проекту
 
-public class CreateOrderActivity extends AppCompatActivity {
-    private TextView tvHello;
-    private TextView tvAdditions;
-    private CheckBox cbLemon;
-    private CheckBox cbSugar;
-    private CheckBox cbMilk;
-    private Spinner spinnerTea;
-    private Spinner spinnerCoffee;
-    private String drinkType;
-    private String name;
-    private String password;
+public class CreateOrderActivity extends AppCompatActivity { //создается класс публичный orderactivity
+    private TextView tvHello; //создаем переменные
+    private TextView tvAdditions; //добавки к напитку
+    private CheckBox cbLemon; //выбор лимона
+    private CheckBox cbSugar; //выбор сахара
+    private CheckBox cbMilk; //молока
+    private Spinner spinnerTea; //чай
+    private Spinner spinnerCoffee;//кофе в выпадающем списке
+    private String drinkType; //тип напитка выберите пж
+    private String name; //строка ввода имени
+    private String password;// строка ввода пароля
     private StringBuilder builderAdditions;
+//public: публичный, общедоступный класс или член класса. Поля и методы, объявленные с модификатором public, видны другим классам из текущего пакета и из внешних пакетов.
 
 
 
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_order);
-        Intent intent = getIntent();
-        if (intent.hasExtra("name") && intent.hasExtra("password")) {
+    @Override //Переопределение метода
+ //Переопределение позволяет взять какой-то метод родительского класса и написать в каждом классе-наследнике
+    // свою реализацию этого метода. Новая реализация «заменит» родительскую в дочернем классе.
+    protected void onCreate(Bundle savedInstanceState) { //в классе обязательно должен быть метод onCreate(), которая задаёт начальную установку параметров при инициализации активности
+        super.onCreate(savedInstanceState); //Это метод, который вызывается при создании деятельности. Т. е. он говорит программе что этот код нужно обрабатывать.
+        setContentView(R.layout.activity_create_order); //Всякий раз, когда вы хотите изменить текущий внешний вид действия или при переходе
+        // от одного действия к другому, новое действие должно иметь дизайн для отображения. Мы вызываем setContentView в onCreate с желаемым дизайном в качестве аргумента.
+        Intent intent = getIntent(); //создаем интент
+        if (intent.hasExtra("name") && intent.hasExtra("password")) { //условие
             name = intent.getStringExtra("name");
             password = intent.getStringExtra("password");
         }else{
             name = getString(R.string.default_name);
             password = getString(R.string.default_password);
         }
-        drinkType = getString(R.string.tea);///////////////  by default !!!!!!!!!!!!
-        tvHello = findViewById(R.id.tvHello);
-        tvAdditions = findViewById(R.id.tvAdditions);
-        cbLemon = findViewById(R.id.checkboxLemon);
-        cbMilk = findViewById(R.id.checkboxMilk);
-        cbSugar = findViewById(R.id.checkboxSugar);
-        spinnerCoffee = findViewById(R.id.spinnerCoffee);
-        spinnerTea = findViewById(R.id.spinnerTea);
-        String additions = String.format(getString(R.string.what_add_to_your_drink),drinkType);
-        tvAdditions.setText(additions);
+        drinkType = getString(R.string.tea); //переменная передает значение типа напитка метод для получения строки
+        tvHello = findViewById(R.id.tvHello); //findViewById. Он по ID возвращает View. текст приветствия
+        tvAdditions = findViewById(R.id.tvAdditions); // по ID возвращает View текст добавок на экране приветствия
+        cbLemon = findViewById(R.id.checkboxLemon); //лимон
+        cbMilk = findViewById(R.id.checkboxMilk); //молоко
+        cbSugar = findViewById(R.id.checkboxSugar); //сахар
+        spinnerCoffee = findViewById(R.id.spinnerCoffee); //кофе выбор в списке
+        spinnerTea = findViewById(R.id.spinnerTea); //чай выбор
+        String additions = String.format(getString(R.string.what_add_to_your_drink),drinkType); //переменная строкового типа передает информацию которую пользователь вводит в поля с выбором
+        tvAdditions.setText(additions); // передача данных с добавками
 
-        builderAdditions = new StringBuilder();
+        builderAdditions = new StringBuilder(); //передача добавок в напиток
+      //  возникает необходимость сделать много изменений в строке символов.
+        //Класс StringBuilder обладает большей производительностью.
+        // Однако он не синхронизирован, поэтому его не нужно использовать в тех случаях, когда к изменяемой строке обращаются несколько потоков.
 
         String helloText = String.format(getString(R.string.hello_client_you_choose),name);
         tvHello.setText(helloText);
