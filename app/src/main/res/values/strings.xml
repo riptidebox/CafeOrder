@@ -19,14 +19,14 @@
     <string name="select_type_of_drink">выберите напиток</string>
     <string name="send_order_description">создать заказ</string>
     <string name="order">Имя: %s\nПароль: %s\nНапиток: %s\nТип напитка:%s</string>
-    <string name="necessary_adds">Обязательные добавки:</string>
+    <string name="necessary_adds">добавки:</string>
 
-    <string-array name="option_of_coffee">
+    <string-array name="option_of_coffee"> <!--//массив выбора кофе-->
         <item>Американо</item>
         <item>Эспрессо</item>
         <item>Лате</item>
     </string-array>
-    <string-array name="option_of_tea">
+    <string-array name="option_of_tea"> <!--//массив выбора кофе-->
         <item>Черный</item>
         <item>Зеленый</item>
         <item>Красный</item>

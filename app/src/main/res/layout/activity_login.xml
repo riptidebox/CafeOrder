@@ -7,6 +7,14 @@
     android:background="@color/light_brown"
     android:orientation="vertical">
 
+   <!--- layout_width (ширина элемента) и layout_height (высота элемента) могут задаваться в абсолютных значениях,
+    а могут быть следующими: fill_parent (максимально возможная ширина или высота в пределах родителя)
+    и wrap_content (ширина или высота определяется по содержимому элемента). -->
+
+
+
+
+    <!--картинка лого чашки-->
     <ImageView
         android:id="@+id/ivLogo"
         android:layout_width="match_parent"
@@ -14,7 +22,7 @@
         android:layout_weight="1"
         android:contentDescription="@string/logo_cafe"
         android:src="@drawable/logo" />
-
+    <!--текст добро пожаловать-->
     <TextView
         android:id="@+id/tvHello"
         android:layout_width="match_parent"
@@ -24,6 +32,7 @@
         android:textColor="@color/white"
         android:textSize="36sp" />
 
+    <!--текст имя пользователя-->
     <EditText
         android:id="@+id/etPersonName"
         android:layout_width="match_parent"
@@ -35,7 +44,10 @@
         android:minHeight="48dp"
         android:text="@string/input_user"
         android:textColor="@color/white" />
+    <!--текст введите пароль-->
 
+<!-- Растяжение по всей ширине или высоте контейнера с помощью значения match_parent-->
+<!-- Растяжение элемента до тех границ, которые достаточны, чтобы вместить все его содержимое с помощью значения wrap_content-->
     <EditText
         android:id="@+id/etPassword"
         android:layout_width="match_parent"
@@ -47,7 +59,18 @@
         android:minHeight="48dp"
         android:textColor="@color/white"
         tools:ignore="SpeakableTextPresentCheck" />
+ <!--minHeight минимальная высота
+ hint - подсказка
+ ems - ширина поля
+ height - высота
+ width - ширина
+layout_margin - внешний отступ
+wrap_content по размеру содержимого
 
+
+wiget - пакет содержащий визуальные элементы длдя активности
+ -->
+    <!--кнопка создания заказа-->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnCreateOrder"
         android:layout_width="match_parent"
@@ -60,4 +83,5 @@
         android:textSize="24sp"
         tools:ignore="TextContrastCheck" />
 
-</LinearLayout>
+    <!--Макет LinearLayout выравнивает все дочерние объекты в одном направлении — вертикально или горизонтально-->
+    </LinearLayout>

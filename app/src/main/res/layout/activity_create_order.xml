@@ -7,6 +7,10 @@
     android:background="@color/light_brown"
     tools:context=".CreateOrderActivity">
 
+    <!--- layout_width (ширина элемента) и layout_height (высота элемента) могут задаваться в абсолютных значениях,
+     а могут быть следующими: fill_parent (максимально возможная ширина или высота в пределах родителя)
+     и wrap_content (ширина или высота определяется по содержимому элемента). -->
+
     <TextView
         android:id="@+id/tvHello"
         android:layout_width="wrap_content"
@@ -22,6 +26,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+<!--layout_constraintEnd_toEndOf - элемент начинается там, где завершается другой элемент-->
+    <!--bold - жирный шрифт-->
+    <!--wrap content - размер по содержимому-->
     <RadioGroup
         android:id="@+id/radioGroup"
         android:layout_width="wrap_content"

@@ -22,4 +22,5 @@
             android:textSize="72sp" />
     </ScrollView>
 
+    <!--wrap content - размер по содержимому-->
 </androidx.constraintlayout.widget.ConstraintLayout>
